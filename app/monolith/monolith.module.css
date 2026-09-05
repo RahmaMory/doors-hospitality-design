@@ -44,6 +44,7 @@
 .heroFoot { display: grid; grid-template-columns: 330px 220px; gap: 50px; align-items: end; margin-top: auto; }
 .heroFoot p { margin: 0; font-size: 14px; line-height: 1.55; }
 .heroFoot a { display: flex; justify-content: space-between; border-bottom: 1px solid var(--m-white); padding-bottom: 10px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.heroFoot a span { display: inline-block; }
 .heroIndex { position: absolute; right: 2.5vw; bottom: 44px; z-index: 2; display: grid; grid-template-columns: auto auto auto; align-items: end; gap: 10px; }
 .heroIndex span { color: var(--m-lime); font-size: 8px; letter-spacing: .14em; }
 .heroIndex strong { font-size: 48px; line-height: .78; }
@@ -56,7 +57,8 @@
 .projectInfo { display: flex; min-height: 640px; flex-direction: column; padding: 18px 42px 24px 0; }
 .projectInfo > span, .projectInfo > p:not(.projectDescription) { color: #8c8e88; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 .projectInfo > p { margin: 16px 0 0; }
-.projectInfo h3 { margin: auto 0 26px; font-size: clamp(48px, 5.5vw, 88px); line-height: .85; letter-spacing: -.055em; text-transform: uppercase; }
+.projectInfo h3 { margin: auto 0 26px; font-size: clamp(48px, 5.5vw, 88px); line-height: .85; letter-spacing: -.055em; text-transform: uppercase; transition: color .35s ease, letter-spacing .35s ease, transform .35s ease; }
+.project:hover .projectInfo h3 { color: var(--m-lime); letter-spacing: -.025em; transform: translateX(9px); }
 .projectDescription { max-width: 390px; margin: 0 !important; font-size: 14px; line-height: 1.6; }
 .projectImage { width: 100%; height: 640px; object-fit: cover; filter: saturate(.72) contrast(1.04); transition: filter .55s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
 .project:hover .projectImage { filter: saturate(1) contrast(1.02); transform: scale(1.008); }
@@ -70,7 +72,9 @@
 .projectGallery img { width: 100%; height: 46vw; max-height: 680px; object-fit: cover; filter: saturate(.72); }
 .projectGallery figcaption { display: flex; justify-content: space-between; padding: 10px 0; color: #777974; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
 
-.practice { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7vw; padding: 130px 2.5vw; background: var(--m-lime); color: #151613; }
+.practice { position: relative; display: grid; overflow: hidden; grid-template-columns: 1.1fr 1fr; gap: 7vw; padding: 130px 2.5vw; background: var(--m-lime); color: #151613; }
+.practice::before { position: absolute; top: -42%; right: -14%; width: 58vw; aspect-ratio: 1; border: 1px solid rgba(21,22,19,.22); border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 30px, rgba(21,22,19,.045) 31px 32px); content: ''; }
+.practiceLead, .practiceBody { position: relative; z-index: 1; }
 .practiceLead > p { margin: 0 0 70px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
 .practiceLead h2 { margin: 0; font-size: clamp(58px, 7vw, 116px); letter-spacing: -.065em; line-height: .8; text-transform: uppercase; }
 .practiceLead h2 span { color: transparent; -webkit-text-stroke: 1.5px #151613; }
@@ -85,7 +89,7 @@
 .metrics strong { font-size: clamp(44px, 4vw, 72px); letter-spacing: -.06em; }
 .metrics span { font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
 
-.contact { padding: 120px 2.5vw 100px; background: #d9d7d0; color: #161714; }
+.contact { padding: 120px 2.5vw 100px; background: linear-gradient(120deg, #d9d7d0, #f0eee6, #c8c7c1, #e5e3db); background-size: 260% 260%; color: #161714; }
 .contact > header { display: flex; justify-content: space-between; border-top: 1px solid #6f716d; padding-top: 14px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 .contact > header p { margin: 0; }
 .contactGrid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8vw; padding-top: 100px; }
@@ -97,8 +101,10 @@
 .form label span { padding-top: 6px; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
 .form input, .form textarea { width: 100%; resize: none; border: 0; outline: 0; background: transparent; color: inherit; font-size: 18px; }
 .form input::placeholder, .form textarea::placeholder { color: #8b8c87; }
-.form button { display: flex; width: 100%; justify-content: space-between; margin-top: 20px; border: 0; padding: 19px 20px; background: #161714; color: var(--m-lime); cursor: pointer; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.form button { position: relative; display: flex; overflow: hidden; width: 100%; justify-content: space-between; margin-top: 20px; border: 0; padding: 19px 20px; background: #161714; color: var(--m-lime); cursor: pointer; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; transition: background .25s ease, color .25s ease, transform .25s ease; }
 .form button:hover { background: var(--m-lime); color: #161714; }
+.form button:hover { transform: translateY(-4px); }
+.form button::before { position: absolute; top: 0; bottom: 0; left: -35%; width: 18%; background: rgba(201,242,105,.28); content: ''; transform: skewX(-22deg); }
 .form button span { transition: transform .25s ease; }
 .form button:hover span { transform: rotate(45deg); }
 .form small { display: block; margin-top: 10px; color: #797a76; font-size: 9px; }
@@ -133,6 +139,131 @@
 @keyframes monolithZoom {
   from { opacity: .55; transform: scale(1.035); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand { animation: monoBrandPulse 2.8s ease-in-out .7s infinite alternate; }
+  .brand small { animation: monoSmallShift 3.5s ease-in-out infinite alternate; }
+  .nav nav a { animation: monoNavJump 2.6s ease-in-out 1s infinite alternate; }
+  .nav nav a:nth-child(2) { animation-delay: 1.25s; }
+  .nav nav a:nth-child(3) { animation-delay: 1.5s; }
+  .back span { display: inline-block; animation: monoArrowSwing 1.6s ease-in-out infinite alternate; }
+  .hero > img { animation: monolithZoom 1.4s cubic-bezier(.2,.7,.2,1) both, monoCinematic 11s ease-in-out 1.4s infinite alternate; }
+  .heroCopy > p { animation: monolithReveal .8s cubic-bezier(.2,.7,.2,1) both, monoGlow 2.4s ease-in-out .9s infinite alternate; }
+  .heroCopy h1 { animation: monolithReveal .8s cubic-bezier(.2,.7,.2,1) .1s both, monoHeadlineMove 5.4s ease-in-out 1.1s infinite alternate; }
+  .heroCopy h1 span { animation: monoOutlineFlash 2.8s ease-in-out 1s infinite alternate; }
+  .heroFoot p { animation: monoTextDrift 4.8s ease-in-out infinite alternate; }
+  .heroFoot a span { animation: monoArrowDrop 1.1s ease-in-out infinite alternate; }
+  .heroIndex { animation: monolithReveal .8s cubic-bezier(.2,.7,.2,1) .34s both, monoIndexPulse 2.6s ease-in-out 1.1s infinite alternate; }
+  .sectionTitle h2 { animation: monoSectionDrift 5s ease-in-out infinite alternate; }
+  .projectInfo > span { animation: monoGlow 2.2s ease-in-out infinite alternate; }
+  .project:nth-of-type(1) .projectImage { animation: monoImagePanOne 8s ease-in-out infinite alternate; }
+  .project:nth-of-type(2) .projectImage { animation: monoImagePanTwo 9.5s ease-in-out infinite alternate; }
+  .project:nth-of-type(3) .projectImage { animation: monoImagePanOne 10.5s ease-in-out infinite alternate-reverse; }
+  .projectDetails summary b { display: inline-block; animation: monoArrowSwing 1.8s ease-in-out infinite alternate; }
+  .practice::before { animation: monoPracticeOrbit 16s linear infinite; }
+  .practiceLead h2 { animation: monoPracticeFloat 4.8s ease-in-out infinite alternate; }
+  .disciplines div strong { animation: monoDisciplineShift 3.4s ease-in-out infinite alternate; }
+  .disciplines div:nth-child(2) strong { animation-delay: .3s; }
+  .disciplines div:nth-child(3) strong { animation-delay: .6s; }
+  .disciplines div:nth-child(4) strong { animation-delay: .9s; }
+  .metrics strong { animation: monoMetricPulse 2.5s ease-in-out infinite alternate; }
+  .metrics div:nth-child(2) strong { animation-delay: .35s; }
+  .metrics div:nth-child(3) strong { animation-delay: .7s; }
+  .contact { animation: monoContactGradient 11s ease-in-out infinite alternate; }
+  .contactGrid h2 { animation: monoContactFloat 4.8s ease-in-out infinite alternate; }
+  .form button { animation: monoButtonPulse 2.3s ease-in-out infinite alternate; }
+  .form button::before { animation: monoButtonShine 3s ease-in-out infinite; }
+  .footer strong { animation: monoBrandPulse 2.4s ease-in-out infinite alternate; }
+  .footer > a { animation: monoArrowDrop 1.4s ease-in-out infinite alternate; }
+}
+
+@keyframes monoBrandPulse {
+  from { letter-spacing: .1em; opacity: .7; }
+  to { letter-spacing: .2em; opacity: 1; }
+}
+@keyframes monoSmallShift {
+  from { transform: translateX(0); }
+  to { transform: translateX(7px); }
+}
+@keyframes monoNavJump {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+@keyframes monoArrowSwing {
+  from { transform: translate3d(0,0,0) rotate(-10deg); }
+  to { transform: translate3d(5px,-4px,0) rotate(17deg); }
+}
+@keyframes monoCinematic {
+  from { transform: scale(1.01) translate3d(-.6%,0,0); filter: grayscale(1) contrast(1.08); }
+  to { transform: scale(1.085) translate3d(.8%,-.7%,0); filter: grayscale(.82) contrast(1.14); }
+}
+@keyframes monoGlow {
+  from { color: var(--m-lime); text-shadow: 0 0 0 rgba(201,242,105,0); }
+  to { color: #e3ff9d; text-shadow: 0 0 18px rgba(201,242,105,.58); }
+}
+@keyframes monoHeadlineMove {
+  from { transform: translate3d(0,0,0) skewX(0); }
+  to { transform: translate3d(12px,-8px,0) skewX(-1deg); }
+}
+@keyframes monoOutlineFlash {
+  from { color: transparent; -webkit-text-stroke-color: var(--m-white); }
+  to { color: rgba(201,242,105,.1); -webkit-text-stroke-color: var(--m-lime); }
+}
+@keyframes monoTextDrift {
+  from { transform: translateX(0); }
+  to { transform: translateX(9px); }
+}
+@keyframes monoArrowDrop {
+  from { transform: translateY(-3px); }
+  to { transform: translateY(6px); }
+}
+@keyframes monoIndexPulse {
+  from { transform: scale(.94) rotate(-2deg); }
+  to { transform: scale(1.05) rotate(2deg); }
+}
+@keyframes monoSectionDrift {
+  from { transform: translateX(0); }
+  to { transform: translateX(15px); }
+}
+@keyframes monoImagePanOne {
+  from { transform: scale(1.015) translate3d(-.7%,0,0); filter: saturate(.55) contrast(1.05); }
+  to { transform: scale(1.075) translate3d(.8%,-.6%,0); filter: saturate(1) contrast(1.1); }
+}
+@keyframes monoImagePanTwo {
+  from { transform: scale(1.07) translate3d(.8%,-.5%,0); filter: saturate(.9) contrast(1.08); }
+  to { transform: scale(1.015) translate3d(-.7%,.5%,0); filter: saturate(.55) contrast(1.04); }
+}
+@keyframes monoPracticeOrbit {
+  to { transform: rotate(360deg) scale(1.12); }
+}
+@keyframes monoPracticeFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-13px); }
+}
+@keyframes monoDisciplineShift {
+  from { letter-spacing: 0; transform: translateX(0); }
+  to { letter-spacing: .035em; transform: translateX(9px); }
+}
+@keyframes monoMetricPulse {
+  from { transform: translateY(0) scale(.96); }
+  to { transform: translateY(-7px) scale(1.03); }
+}
+@keyframes monoContactGradient {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@keyframes monoContactFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
+}
+@keyframes monoButtonPulse {
+  from { box-shadow: 0 0 0 0 rgba(201,242,105,.22); }
+  to { box-shadow: 0 0 0 9px rgba(201,242,105,0); }
+}
+@keyframes monoButtonShine {
+  0%, 35% { transform: translateX(-140%) skewX(-22deg); }
+  80%, 100% { transform: translateX(760%) skewX(-22deg); }
 }
 
 @media (max-width: 880px) {

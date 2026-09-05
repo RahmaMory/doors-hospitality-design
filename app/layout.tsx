@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import MotionEffects from './motion-effects';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -32,7 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MotionEffects />
+        {children}
+      </body>
     </html>
   );
 }

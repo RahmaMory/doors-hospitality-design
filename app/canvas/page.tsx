@@ -44,7 +44,7 @@ const projects = [
 export default function CanvasPage() {
   return (
     <main className={styles.page} id="top">
-      <header className={styles.nav}>
+      <header className={styles.nav} data-reveal="down">
         <a href="#top" className={styles.brand}>doors<span>✦</span></a>
         <nav aria-label="Living Canvas navigation">
           <a href="#work">Work</a><a href="#studio">Studio</a><a href="#hello">Say hello</a>
@@ -53,21 +53,21 @@ export default function CanvasPage() {
       </header>
 
       <section className={styles.hero}>
-        <div className={styles.heroText}>
+        <div className={styles.heroText} data-reveal="left">
           <p>Hospitality design studio · Cairo</p>
           <h1>Good stays<br />make every trip<br /><em>more alive.</em></h1>
           <a href="#work">Come inside <span>↓</span></a>
         </div>
-        <div className={styles.heroCollage}>
+        <div className={styles.heroCollage} data-reveal="right">
           <div className={styles.sun} aria-hidden="true" />
           <img className={styles.heroMain} src="/images/space-02.jpg" alt="Bright warm living room filled with plants and art" />
           <img className={styles.heroDetail} src="/images/space-10.jpg" alt="Textural interior detail" />
           <div className={styles.heroStamp}><span>Made for memorable stays</span><b>CAI<br />EGY</b></div>
         </div>
-        <p className={styles.marginNote}>Serviced stays / Suites / Styling / Guest stories</p>
+        <p className={styles.marginNote} data-reveal="down">Serviced stays / Suites / Styling / Guest stories</p>
       </section>
 
-      <section className={styles.marquee} aria-label="Studio philosophy">
+      <section className={styles.marquee} aria-label="Studio philosophy" data-reveal="up">
         <div className={styles.marqueeTrack}>
           <p>Guest-first spaces <span>✦</span> Everyday wonder <span>✦</span> Made to return to <span>✦</span></p>
           <p aria-hidden="true">Guest-first spaces <span>✦</span> Everyday wonder <span>✦</span> Made to return to <span>✦</span></p>
@@ -75,14 +75,14 @@ export default function CanvasPage() {
       </section>
 
       <section className={styles.work} id="work">
-        <header className={styles.sectionHeader}>
+        <header className={styles.sectionHeader} data-reveal="up">
           <div><span>01</span><p>Selected work</p></div>
           <h2>A few stays<br />we <em>love.</em></h2>
           <p>Every project is a conversation between the guest, the place, and the story worth returning to.</p>
         </header>
         <div className={styles.projectGrid}>
           {projects.map((project, index) => (
-            <article className={`${styles.project} ${styles[project.color]}`} key={project.name}>
+            <article className={`${styles.project} ${styles[project.color]}`} key={project.name} data-reveal={index % 2 ? 'right' : 'left'} data-delay={String((index % 2) * 90)}>
               <div className={styles.imageFrame}>
                 <img src={project.cover} alt={`${project.name} — ${project.category}`} loading="lazy" />
                 <span>{String(index + 1).padStart(2, '0')}</span>
@@ -103,12 +103,12 @@ export default function CanvasPage() {
       </section>
 
       <section className={styles.studio} id="studio">
-        <div className={styles.studioArt}>
+        <div className={styles.studioArt} data-reveal="left">
           <img src="/images/space-05.jpg" alt="A calm, layered hospitality interior by Doors" loading="lazy" />
           <span className={styles.blueDot} aria-hidden="true" />
           <p>Guest<br /><strong>first</strong></p>
         </div>
-        <div className={styles.studioCopy}>
+        <div className={styles.studioCopy} data-reveal="right">
           <span className={styles.sectionNumber}>02 / The studio</span>
           <h2>Serious about stays.<br /><em>Curious about every detail.</em></h2>
           <p>
@@ -124,13 +124,13 @@ export default function CanvasPage() {
       </section>
 
       <section className={styles.hello} id="hello">
-        <div className={styles.helloLead}>
+        <div className={styles.helloLead} data-reveal="left">
           <span>03 / Let’s talk</span>
           <h2>There’s a new<br />stay to <em>shape.</em></h2>
           <p>Tell us what you’re imagining. We’d love to hear about the location, the guests, and the feeling you want them to take home.</p>
           <div><a href="mailto:hello@doors.design">hello@doors.design</a><a href="#work">Selected work ↗</a></div>
         </div>
-        <form className={styles.form}>
+        <form className={styles.form} data-reveal="right">
           <label>Hello, my name is<input name="name" placeholder="Your name" /></label>
           <label>You can reach me at<input name="contact" placeholder="Email or phone" /></label>
           <label>I’d love to talk about<textarea name="message" placeholder="Your project, idea, or space..." rows={3} /></label>
@@ -139,7 +139,7 @@ export default function CanvasPage() {
         </form>
       </section>
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} data-reveal="up">
         <div className={styles.footerBrand}>doors<span>✦</span></div>
         <p>Designing from Cairo, Egypt<br />for memorable stays everywhere.</p>
         <p>© 2026 Doors Studio</p>

@@ -704,10 +704,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   overflow: hidden;
   padding: clamp(20px, 3vw, 42px) 0 12px;
   color: #f2efe8;
-  font-size: clamp(88px, 21vw, 350px);
+  font-size: clamp(72px, 13vw, 220px);
   font-weight: 700;
   letter-spacing: -.075em;
-  line-height: .74;
+  line-height: .82;
   white-space: nowrap;
 }
 .site-footer-grid {

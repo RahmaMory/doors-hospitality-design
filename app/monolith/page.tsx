@@ -39,7 +39,7 @@ const projects = [
 export default function MonolithPage() {
   return (
     <main className={styles.page} id="top">
-      <header className={styles.nav} data-reveal="down">
+      <header className={styles.nav}>
         <a className={styles.brand} href="#top">DOORS<small>Hospitality design</small></a>
         <nav aria-label="Monolith navigation">
           <a href="#projects">Projects</a><a href="#practice">Practice</a><a href="#contact">Contact</a>

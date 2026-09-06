@@ -22,8 +22,8 @@
   border-bottom: 1px solid rgba(41,37,31,.25);
 }
 
-.brand, .footerBrand { font-family: Georgia, 'Times New Roman', serif; font-size: 29px; font-weight: 700; letter-spacing: -.04em; }
-.brand span, .footerBrand span { display: inline-block; color: var(--c-clay); margin-left: 7px; font-size: 18px; }
+.brand { font-family: Georgia, 'Times New Roman', serif; font-size: 29px; font-weight: 700; letter-spacing: -.04em; }
+.brand span { display: inline-block; color: var(--c-clay); margin-left: 7px; font-size: 18px; }
 .nav nav { display: flex; gap: 8px; }
 .nav nav a, .all { border: 1px solid rgba(41,37,31,.42); border-radius: 999px; padding: 8px 16px; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; transition: background .2s, color .2s; }
 .nav nav a:hover, .all:hover { background: var(--c-ink); color: var(--c-cream); }
@@ -114,9 +114,6 @@
 .form button span { transition: transform .25s ease; }
 .form button:hover span { transform: rotate(45deg); }
 .form small { display: block; margin-top: 11px; opacity: .62; font-size: 9px; text-align: center; }
-.footer { display: grid; grid-template-columns: 1.3fr 1fr 1fr auto; gap: 28px; align-items: end; padding: 56px 4vw; background: #24211d; color: #f5e9d0; }
-.footer p, .footer a { margin: 0; font-size: 9px; line-height: 1.6; letter-spacing: .09em; text-transform: uppercase; }
-
 @media (prefers-reduced-motion: no-preference) {
   .nav, .heroText > p, .heroText h1, .heroText > a, .heroCollage, .marginNote {
     animation: canvasReveal .85s cubic-bezier(.2,.7,.2,1) both;
@@ -157,7 +154,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .brand span, .footerBrand span { animation: canvasStarSpin 3s linear infinite; }
+  .brand span { animation: canvasStarSpin 3s linear infinite; }
   .brand { animation: canvasBrandBreathe 3.5s ease-in-out .8s infinite alternate; }
   .nav nav a { animation: canvasPillDance 2.8s ease-in-out 1s infinite alternate; }
   .nav nav a:nth-child(2) { animation-delay: 1.3s; }
@@ -296,7 +293,6 @@
   .studio, .hello { grid-template-columns: 1fr; }
   .studioArt { height: 720px; }
   .hello { gap: 80px; }
-  .footer { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -322,7 +318,6 @@
   .hello { padding: 90px 24px; }
   .helloLead h2 { font-size: 15vw; }
   .form { padding: 25px 20px; }
-  .footer { grid-template-columns: 1fr; padding: 50px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

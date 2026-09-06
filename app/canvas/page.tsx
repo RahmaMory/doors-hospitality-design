@@ -139,12 +139,6 @@ export default function CanvasPage() {
         </form>
       </section>
 
-      <footer className={styles.footer} data-reveal="up">
-        <div className={styles.footerBrand}>doors<span>✦</span></div>
-        <p>Designing from Cairo, Egypt<br />for memorable stays everywhere.</p>
-        <p>© 2026 Doors Studio</p>
-        <a href="#top">Up we go ↑</a>
-      </footer>
     </main>
   );
 }

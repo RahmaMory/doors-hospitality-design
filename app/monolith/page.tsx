@@ -74,7 +74,7 @@ export default function MonolithPage() {
               <p className={styles.projectDescription}>{project.description}</p>
             </div>
             <img className={styles.projectImage} src={project.cover} alt={`${project.name} project`} loading="lazy" data-reveal={index % 2 ? 'left' : 'right'} />
-            <details className={styles.projectDetails} data-reveal="up">
+            <details className={styles.projectDetails}>
               <summary><span>Open case study</span><b>{String(index + 1).padStart(2, '0')} ↗</b></summary>
               <div className={styles.projectGallery}>
                 {project.gallery.map((image, galleryIndex) => (

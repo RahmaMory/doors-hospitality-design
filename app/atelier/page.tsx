@@ -79,7 +79,7 @@ export default function AtelierPage() {
               <h2>{project.name}</h2>
               <p>{project.category}</p>
             </div>
-            <details className={styles.projectDetails} data-reveal="up">
+            <details className={styles.projectDetails}>
               <summary>View project <span>＋</span></summary>
               <div className={styles.detailCopy}>
                 <p>{project.description}</p>

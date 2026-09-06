@@ -209,10 +209,50 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="hub-footer" data-reveal="up">
-        <span>Doors Hospitality Design · Cairo, Egypt</span>
-        <span>Demo presentation · 2026</span>
-        <a href="#top">Back to top ↑</a>
+      <footer className="site-footer">
+        <div className="site-footer-cta" data-reveal="left">
+          <div>
+            <span>Have a hospitality project in mind?</span>
+            <h2>Let&apos;s open the<br />next door.</h2>
+          </div>
+          <a href="#contact">Start a project <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div className="site-footer-wordmark" aria-label="Doors" data-reveal="up">DOORS</div>
+
+        <div className="site-footer-grid">
+          <div data-reveal="up">
+            <p>Explore</p>
+            <a href="#directions">Directions</a>
+            <a href="#about">About us</a>
+            <a href="#locations">Locations</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div data-reveal="up" data-delay="70">
+            <p>Creative directions</p>
+            <a href="/atelier">The Atelier</a>
+            <a href="/monolith">Monolith</a>
+            <a href="/canvas">Living Canvas</a>
+          </div>
+          <div data-reveal="up" data-delay="140">
+            <p>Contact</p>
+            <a href="mailto:hello@doors-studio.com">hello@doors-studio.com</a>
+            <a href="tel:+201000000000">+20 100 000 0000</a>
+            <a href="#contact">WhatsApp</a>
+          </div>
+          <div data-reveal="up" data-delay="210">
+            <p>Studios</p>
+            <span>New Cairo · Design studio</span>
+            <span>Zamalek · Meeting space</span>
+            <span>North Coast · Seasonal</span>
+          </div>
+        </div>
+
+        <div className="site-footer-bottom">
+          <span>Doors Hospitality Design · Cairo, Egypt</span>
+          <span>Concept presentation · 2026</span>
+          <a href="#top">Back to top ↑</a>
+        </div>
       </footer>
     </main>
   );
